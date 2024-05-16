@@ -11,7 +11,7 @@ export default function Home() {
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
               <div className="absolute w-28 left-0 -top-20 lg-block">
-                <img src="/snake-1.png" className="w-full" />
+                <img src="/snake-1.png" className="w-full" alt="snake image" />
               </div>
               <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight to-gray-900 text-5xl md:text-6xl lg:text-7xl">Your Image on a <span className="bg-green-600 px-2 text-white">Custom</span> Phone Case</h1>
               <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
@@ -81,8 +81,8 @@ export default function Home() {
 
           <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
             <div className="relative md:max-w-xl">
-              <img src="/your-image.png" alt="" className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block"/>
-              <img src="/line.png" className="absolute w-20 -left-6 -bottom-6 select-none"/>
+              <img src="/your-image.png" alt="user" className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block"/>
+              <img src="/line.png" alt="user" className="absolute w-20 -left-6 -bottom-6 select-none"/>
               <Phone className="w-64" imgSrc="/testimonials/1.jpg"/>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Home() {
               </span> 
               say
             </h1>
-            <img src="snake-2.png" className="w-24 order-0 lg:order-2"/>
+            <img src="snake-2.png" className="w-24 order-0 lg:order-2" alt="snake image"/>
           </div>
 
           <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
@@ -113,7 +113,7 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "The case feels durable and I even got a compliment on the design. Had the case for two and a half months now and <span className="p-0.5 bg-slate-800 text-white">the image is clear</span>, on the case I had before, the image started fading into yellow-ish color after a couple weeks. Love it."
+                  The case feels durable and I even got a compliment on the design. Had the case for two and a half months now and <span className="p-0.5 bg-slate-800 text-white">the image is clear</span>, on the case I had before, the image started fading into yellow-ish color after a couple weeks. Love it.
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
@@ -144,7 +144,7 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "I usually keep my phone together with my keys in my pocket and that led to some pretty heavy scratchmarks on all of my last phone cases. This one, besides a barely noticeable scratch on the corner, {' '}<span className="p-0.5 bg-slate-800 text-white">looks brand new after about half a year</span>. I dig it!"
+                  I usually keep my phone together with my keys in my pocket and that led to some pretty heavy scratchmarks on all of my last phone cases. This one, besides a barely noticeable scratch on the corner, {' '}<span className="p-0.5 bg-slate-800 text-white">looks brand new after about half a year</span>. I dig it!
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
