@@ -124,6 +124,10 @@ exports.Prisma.ConfigurationScalarFieldEnum = {
   width: 'width',
   height: 'height',
   imageUrl: 'imageUrl',
+  model: 'model',
+  material: 'material',
+  finish: 'finish',
+  color: 'color',
   croppedImageUrl: 'croppedImageUrl'
 };
 
@@ -141,7 +145,30 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
+exports.PhoneModel = exports.$Enums.PhoneModel = {
+  iphonex: 'iphonex',
+  iphone11: 'iphone11',
+  iphone12: 'iphone12',
+  iphone13: 'iphone13',
+  iphone14: 'iphone14',
+  iphone15: 'iphone15'
+};
 
+exports.CaseMaterial = exports.$Enums.CaseMaterial = {
+  silicone: 'silicone',
+  polycarbonate: 'polycarbonate'
+};
+
+exports.CaseFinish = exports.$Enums.CaseFinish = {
+  smooth: 'smooth',
+  textured: 'textured'
+};
+
+exports.CaseColor = exports.$Enums.CaseColor = {
+  black: 'black',
+  blue: 'blue',
+  rose: 'rose'
+};
 
 exports.Prisma.ModelName = {
   Configuration: 'Configuration'

@@ -92,6 +92,10 @@ exports.Prisma.ConfigurationScalarFieldEnum = {
   width: 'width',
   height: 'height',
   imageUrl: 'imageUrl',
+  model: 'model',
+  material: 'material',
+  finish: 'finish',
+  color: 'color',
   croppedImageUrl: 'croppedImageUrl'
 };
 
@@ -109,7 +113,30 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
+exports.PhoneModel = exports.$Enums.PhoneModel = {
+  iphonex: 'iphonex',
+  iphone11: 'iphone11',
+  iphone12: 'iphone12',
+  iphone13: 'iphone13',
+  iphone14: 'iphone14',
+  iphone15: 'iphone15'
+};
 
+exports.CaseMaterial = exports.$Enums.CaseMaterial = {
+  silicone: 'silicone',
+  polycarbonate: 'polycarbonate'
+};
+
+exports.CaseFinish = exports.$Enums.CaseFinish = {
+  smooth: 'smooth',
+  textured: 'textured'
+};
+
+exports.CaseColor = exports.$Enums.CaseColor = {
+  black: 'black',
+  blue: 'blue',
+  rose: 'rose'
+};
 
 exports.Prisma.ModelName = {
   Configuration: 'Configuration'
@@ -152,7 +179,6 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -161,13 +187,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Configuration {\n  id              String  @id @default(cuid())\n  width           Int\n  height          Int\n  imageUrl        String\n  croppedImageUrl String?\n}\n",
-  "inlineSchemaHash": "fa0bc8ad06426f70e7dcb40eeac0be4d7d90f93b5c85d11cadcc969869e2bb0f",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum OrderStatus {\n  fulfilled\n  shipped\n  awaiting_shipment\n}\n\nenum PhoneModel {\n  iphonex\n  iphone11\n  iphone12\n  iphone13\n  iphone14\n  iphone15\n}\n\nenum CaseMaterial {\n  silicone\n  polycarbonate\n}\n\nenum CaseFinish {\n  smooth\n  textured\n}\n\nenum CaseColor {\n  black\n  blue\n  rose\n}\n\nmodel Configuration {\n  id              String        @id @default(cuid())\n  width           Int\n  height          Int\n  imageUrl        String\n  model           PhoneModel?\n  material        CaseMaterial?\n  finish          CaseFinish?\n  color           CaseColor?\n  croppedImageUrl String?\n}\n",
+  "inlineSchemaHash": "5bb502cda267008a35da808fe0280724c121fdc6885fe7e2fb87d95e9bd7ad5c",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Configuration\":{\"dbName\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"String\",\"default\":{\"name\":\"cuid\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"width\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"height\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imageUrl\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"croppedImageUrl\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"Configuration\":{\"dbName\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"String\",\"default\":{\"name\":\"cuid\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"width\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"height\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"imageUrl\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"model\",\"kind\":\"enum\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"PhoneModel\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"material\",\"kind\":\"enum\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"CaseMaterial\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"finish\",\"kind\":\"enum\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"CaseFinish\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"color\",\"kind\":\"enum\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"CaseColor\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"croppedImageUrl\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{\"OrderStatus\":{\"values\":[{\"name\":\"fulfilled\",\"dbName\":null},{\"name\":\"shipped\",\"dbName\":null},{\"name\":\"awaiting_shipment\",\"dbName\":null}],\"dbName\":null},\"PhoneModel\":{\"values\":[{\"name\":\"iphonex\",\"dbName\":null},{\"name\":\"iphone11\",\"dbName\":null},{\"name\":\"iphone12\",\"dbName\":null},{\"name\":\"iphone13\",\"dbName\":null},{\"name\":\"iphone14\",\"dbName\":null},{\"name\":\"iphone15\",\"dbName\":null}],\"dbName\":null},\"CaseMaterial\":{\"values\":[{\"name\":\"silicone\",\"dbName\":null},{\"name\":\"polycarbonate\",\"dbName\":null}],\"dbName\":null},\"CaseFinish\":{\"values\":[{\"name\":\"smooth\",\"dbName\":null},{\"name\":\"textured\",\"dbName\":null}],\"dbName\":null},\"CaseColor\":{\"values\":[{\"name\":\"black\",\"dbName\":null},{\"name\":\"blue\",\"dbName\":null},{\"name\":\"rose\",\"dbName\":null}],\"dbName\":null}},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = undefined
 
