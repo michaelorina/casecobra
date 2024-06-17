@@ -6,7 +6,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { cn, formatPrice } from '@/lib/utils'
 import NextImage from 'next/image'
 import { Rnd } from 'react-rnd'
-import { Description, RadioGroup } from '@headlessui/react'
+import { RadioGroup } from '@headlessui/react'
 import { useRef, useState } from 'react'
 import {
     COLORS,
@@ -251,7 +251,7 @@ const DesignConfigurator = ({
                                                         {
                                                             [`border-${color.tw}`]: active || checked,
                                                         }
-                                                    ) 
+                                                    )
                                                 }>
                                                 <span
                                                     className={cn(
@@ -352,13 +352,13 @@ const DesignConfigurator = ({
                                                             </span>
                                                         </span>
 
-                                                        <Description
+                                                        <RadioGroup.Description
                                                             as='span'
                                                             className='mt-2 flex text-sm sm:ml-4 sm:mt-0 sm:flex-col sm:text-right'>
                                                             <span className='font-medium text-gray-900'>
                                                                 {formatPrice(option.price / 100)}
                                                             </span>
-                                                        </Description>
+                                                        </RadioGroup.Description>
                                                     </RadioGroup.Option>
                                                 ))}
                                             </div>
@@ -381,9 +381,6 @@ const DesignConfigurator = ({
                                 )}
                             </p>
                             <Button
-                                isLoading={isPending}
-                                disabled={isPending}
-                                loadingText="Saving"
                                 onClick={() =>
                                     saveConfig({
                                         configId,
